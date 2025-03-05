@@ -10,8 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mdx-js/react": "^3.1.0",
+    "@mdx-js/rollup": "^3.1.0",
+    "@react-pdf/renderer": "^4.3.0",
+    "mermaid": "^11.4.1",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "rehype-katex": "^7.0.1",
+    "rehype-pretty-code": "^0.14.0",
+    "remark-math": "^6.0.0",
+    "remark-mdx-math-enhanced": "^0.0.1-beta.3",
+    "zenn-content-css": "^0.1.158"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

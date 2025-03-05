@@ -1,0 +1,46 @@
+import MyComponent from '../components/MyComponent'
+import MermaidChart from '../components/MermaidChart'
+import PageBreak from '../components/PageBreak'
+import Content_child from './content_child.mdx'
+export const a = 1
+export const items = ["Apple", "Banana", "Cherry"]
+
+
+### use variable
+data: {a+1}
+
+### use loop
+<ul>
+    {items.map((item, index) => (
+        <li key={index}>{item}</li>
+    ))}
+</ul>
+
+### use code block
+```rust title="main.rs"
+fn main() {
+    println!("Hello, world!");
+}
+```
+
+### use LaTeX
+$$\sqrt{a^2 + b^2}$$
+
+### use Mermaid
+<MermaidChart chart={
+`graph TD;
+    A[Start] --> B{Decision?};
+    B -->|Yes| C[Do something];
+    B -->|No| D[Do something else];
+    C --> E[End];
+    D --> E;
+`
+} />
+
+### use React Component
+<MyComponent />
+
+### use mdx component
+<Content_child />
+
+
