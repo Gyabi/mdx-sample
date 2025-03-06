@@ -1,16 +1,18 @@
-import { useEffect, useState, ReactNode } from 'react';
+import { useEffect, useRef, ReactNode } from 'react';
 
 const HeadingsIndexer = ({ children }: { children: ReactNode }) => {
-//   const [headingIndex, setHeadingIndex] = useState<number[]>([]);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const headings = Array.from(document.querySelectorAll('h1, h2, h3, h4, h5, h6'));
+    if (!containerRef.current) return;
+
+    const headings = Array.from(containerRef.current.querySelectorAll('h1, h2, h3, h4, h5, h6'));
 
     const indexMap: { [key: number]: number } = {};
-    
+
     headings.forEach((heading) => {
       const level = parseInt(heading.tagName[1], 10); // h1 -> 1, h2 -> 2, ...
-      
+
       // 上位レベルがなければ初期化
       if (indexMap[level] === undefined) indexMap[level] = 0;
 
@@ -34,13 +36,9 @@ const HeadingsIndexer = ({ children }: { children: ReactNode }) => {
         heading.id = heading.textContent.replace(/\s+/g, '-').toLowerCase();
       }
     });
+  }, [children]);
 
-    // setHeadingIndex(Object.values(indexMap));
-  }, []);
-
-  return <>{children}</>;
+  return <div ref={containerRef}>{children}</div>;
 };
 
 export default HeadingsIndexer;
-
-
