@@ -1,4 +1,8 @@
 # MDX document template
+## requirements
+- node.js
+- npm
+
 ## setup
 ```bash
 npm install
@@ -14,5 +18,5 @@ please open the browser and print to PDF!
 
 
 ## libraries
-https://mdxjs.com/
-https://rehype-pretty.pages.dev/
+- https://mdxjs.com/
+- https://rehype-pretty.pages.dev/
