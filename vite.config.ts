@@ -4,7 +4,7 @@ import mdx from '@mdx-js/rollup'
 import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'
 import rehypePrettyCode from 'rehype-pretty-code'
-
+import remarkGfm from 'remark-gfm'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -12,6 +12,6 @@ export default defineConfig({
     rehypePlugins: [rehypeKatex, [rehypePrettyCode, {
       theme: 'github-dark'
     }]],
-    remarkPlugins: [remarkMath],
+    remarkPlugins: [remarkMath, remarkGfm],
   }),],
 })
